@@ -8,15 +8,17 @@
 require 'open-uri'
 require 'json'
 
+puts "Seeding data..."
 
 TOP_RATED = 'https://tmdb.lewagon.com/movie/top_rated'
 html_file = URI.open(TOP_RATED).read
 sample = JSON.parse(html_file)
 
 
-movies = sample["results"]
+movies = sample['results']
 
 movies.each do |movie|
-  puts movie["title"]
-  # Movie.create(title: movie["title"], overview: "overview", poster_url: "poster_path", rating "vote_average":)
+  Movie.create(title: movie['title'], overview: movie['overview'], poster_url: movie['poster_path'], rating: movie['vote_average'])
 end
+
+puts "Seeding data completed"
