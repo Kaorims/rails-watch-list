@@ -1,4 +1,5 @@
-<%= simple_form_for (@bookmark) do |f| %>
-  <%= f.input :name %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, placeholder: "Write your comment here" %>
+  <%= f.association :movie, collection: Movie.all %>
   <%= f.submit %>
 <% end %>
