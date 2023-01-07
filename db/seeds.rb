@@ -18,7 +18,7 @@ sample = JSON.parse(html_file)
 movies = sample['results']
 
 movies.each do |movie|
-  Movie.create(title: movie['title'], overview: movie['overview'], poster_url: movie['poster_path'], rating: movie['vote_average'])
+  Movie.create(title: movie['title'], overview: movie['overview'], poster_url: "https://image.tmdb.org/t/p/w500/#{movie['poster_path']}", rating: movie['vote_average'])
 end
 
 puts "Seeding data completed"
