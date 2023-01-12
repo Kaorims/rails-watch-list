@@ -1,6 +1,11 @@
-<div>
-  <%= simple_form_for (@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit "Add list" %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <h3>Create a new list</h3>
+      <%= simple_form_for (@list) do |f| %>
+        <%= f.input :name %>
+        <%= f.submit "Add list", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
 </div>
